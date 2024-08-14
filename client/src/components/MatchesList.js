@@ -17,7 +17,7 @@ const MatchList = () => {
     const handleAddMatch = (event) => {
         event.preventDefault();
         dispatch(addMatch(newMatch));
-        setNewMatch({ event_id: '', description: '' }); // Reset the input fields after adding the match
+        setNewMatch({ event_id: '', description: '' }); 
     };
 
     if (loading) return <div>Loading...</div>;

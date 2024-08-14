@@ -4,7 +4,6 @@ const FETCH_EVENTS_SUCCESS = 'FETCH_EVENTS_SUCCESS';
 const FETCH_EVENTS_FAILURE = 'FETCH_EVENTS_FAILURE';
 const ADD_EVENT = 'ADD_EVENT';
 
-// Action to fetch events from the API
 export const fetchEvents = () => {
     return dispatch => {
         dispatch({ type: FETCH_EVENTS_START });

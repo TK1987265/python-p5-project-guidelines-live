@@ -16,7 +16,8 @@ list-style-type: none;
 }
 #wrestlers-list{
   display: flex;
-  gap:20px
+  gap:20px;
+  flex-wrap: wrap
 }
 #wrestlers-list button{
   /* margin: 0 auto */

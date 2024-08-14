@@ -12,7 +12,7 @@ const store = configureStore({
         events: eventsReducer,
         matches: matchesReducer,
     },
-    // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk) // Use thunk directly
+    
 });
 
 export default store;

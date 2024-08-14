@@ -14,7 +14,7 @@ const EventList = () => {
     const handleAddEvent = (event) => {
         event.preventDefault();
         dispatch(addEvent(newEvent));
-        setNewEvent({ name: '', date: '' }); // Reset the input fields after adding the event
+        setNewEvent({ name: '', date: '' }); 
     };
 
     if (loading) return <div>Loading...</div>;

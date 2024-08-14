@@ -1,7 +1,5 @@
 
 
-
-
 export const fetchWrestlers = () => {
     return async (dispatch) => {
         dispatch({ type: 'FETCH_WRESTLERS_REQUEST' });

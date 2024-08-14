@@ -17,7 +17,7 @@ const TeamList = () => {
     const handleAddTeam = (event) => {
         event.preventDefault();
         dispatch(addTeam({ name: newTeamName }));
-        setNewTeamName(''); // Reset the input field after adding the team
+        setNewTeamName(''); 
     };
 
     if (loading) return <div>Loading...</div>;

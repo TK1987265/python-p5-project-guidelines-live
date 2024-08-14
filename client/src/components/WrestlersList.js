@@ -4,13 +4,13 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createWrestler, deleteWrestler, updateWrestler, fetchWrestlers } from '../actions/wrestlersActions';
 import { fetchTeams } from "../actions/teamsActions";
-import WrestlerForm from "./CreateWrestlerForm"; // Ensure correct import
+import WrestlerForm from "./CreateWrestlerForm";
 
 const WrestlersList = () => {
     const dispatch = useDispatch();
     const { wrestlers, loading, error } = useSelector(state => state.wrestlers);
     const { teams } = useSelector(state => state.teams);
-    const [currentWrestler, setCurrentWrestler] = useState(null); // State to hold the current wrestler for editing
+    const [currentWrestler, setCurrentWrestler] = useState(null); 
 
     useEffect(() => {
         dispatch(fetchWrestlers());
@@ -22,7 +22,7 @@ const WrestlersList = () => {
     };
 
     const handleEdit = (wrestler) => {
-        setCurrentWrestler(wrestler); // Set the current wrestler to the one selected for editing
+        setCurrentWrestler(wrestler);
     };
 
     if (loading) return <div>Loading...</div>;
@@ -33,15 +33,13 @@ const WrestlersList = () => {
             <h1>Wrestlers</h1>
             <WrestlerForm teams={teams} wrestlerData={currentWrestler} onSubmit={(formData) => {
                 if (currentWrestler && currentWrestler.id) {
-
-                    console.log("current", currentWrestler.id)
-                    console.log("form", formData)
-                    dispatch(updateWrestler(currentWrestler.id, {...formData})); // Pass ID explicitly if missing
+                    dispatch(updateWrestler(currentWrestler.id, {...formData})); 
+                    
                 } else {
                     
                     dispatch(createWrestler(formData));
                 }
-                setCurrentWrestler(null); // Reset after submission
+                setCurrentWrestler(null);
             }} />
             <ul id="wrestlers-list">
                 {wrestlers.map(wrestler => (
